@@ -1,0 +1,246 @@
+.carousel {
+	padding-bottom: 20px;
+}
+
+body {
+	margin: 0px;
+}
+
+.home-page-separator {
+	margin: 0px;
+	margin-bottom: 25px;
+	border-width: 2px;
+}
+
+h1 {
+	margin: 0px;
+	margin-top: 25px;
+	margin-bottom: 3px;
+}
+
+.poster-thumbnail {
+	box-shadow: 1px 2px 9px 1px rgba(0,0,0,0.75);
+	transition: all 0.2s ease 0s;
+}
+
+.poster-thumbnail:hover {
+	transform: scale(1.02);
+}
+
+.carousel {
+	overflow: hidden;
+}
+
+.carousel-img {
+	transition: all 0.2s ease 0s;
+}
+
+.carousel-img:hover {
+	transform: scale(1.05);
+}
+
+#footer {
+	margin: 0px;
+	margin-top: 40px;
+	padding: 0px;
+	width: 100%;
+	border-radius: 0px;
+}
+
+.glyphicon {
+	padding-left: 3px;
+}
+
+.middle-border {
+	min-height: 300px;
+	margin-top: 170px;
+	border-right: 1px solid #ddd;
+}
+
+.form-box {
+	margin-top: 70px;
+}
+
+.form-top {
+	overflow: hidden;
+	padding: 0 25px 15px 25px;
+	background: #f3f3f3;
+	-moz-border-radius: 4px 4px 0 0; -webkit-border-radius: 4px 4px 0 0; border-radius: 4px 4px 0 0;
+	text-align: left;
+}
+
+.form-top-left {
+	float: left;
+	width: 75%;
+	padding-top: 25px;
+}
+
+.form-top-left h3 { margin-top: 0; }
+
+.form-top-right {
+	float: left;
+	width: 25%;
+	padding-top: 5px;
+	font-size: 66px;
+	color: #ddd;
+	line-height: 100px;
+	text-align: right;
+}
+
+.form-bottom {
+	padding: 25px 25px 30px 25px;
+	background: #eee;
+	-moz-border-radius: 0 0 4px 4px; -webkit-border-radius: 0 0 4px 4px; border-radius: 0 0 4px 4px;
+	text-align: left;
+}
+
+.form-bottom form textarea {
+	height: 100px;
+}
+
+.form-bottom form button.sign-btn {
+	width: 100%;
+}
+
+.form-bottom form .input-error {
+	border-color: #19b9e7;
+}
+
+input[type="text"], 
+input[type="password"], 
+textarea, 
+textarea.form-control {
+	height: 50px;
+    margin: 0;
+    padding: 0 20px;
+    vertical-align: middle;
+    background: #fff;
+    border: 3px solid #fff;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 50px;
+    color: #888;
+    -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px;
+    -moz-box-shadow: none; -webkit-box-shadow: none; box-shadow: none;
+    -o-transition: all .3s; -moz-transition: all .3s; -webkit-transition: all .3s; -ms-transition: all .3s; transition: all .3s;
+}
+
+textarea, 
+textarea.form-control {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	line-height: 30px;
+}
+
+input[type="text"]:focus, 
+input[type="password"]:focus, 
+textarea:focus, 
+textarea.form-control:focus {
+	outline: 0;
+	background: #fff;
+    border: 3px solid #fff;
+    -moz-box-shadow: none; -webkit-box-shadow: none; box-shadow: none;
+}
+
+input[type="text"]:-moz-placeholder, input[type="password"]:-moz-placeholder, 
+textarea:-moz-placeholder, textarea.form-control:-moz-placeholder { color: #888; }
+
+input[type="text"]:-ms-input-placeholder, input[type="password"]:-ms-input-placeholder, 
+textarea:-ms-input-placeholder, textarea.form-control:-ms-input-placeholder { color: #888; }
+
+input[type="text"]::-webkit-input-placeholder, input[type="password"]::-webkit-input-placeholder, 
+textarea::-webkit-input-placeholder, textarea.form-control::-webkit-input-placeholder { color: #888; }
+
+button.sign-btn {
+	height: 50px;
+    margin: 0;
+    padding: 0 20px;
+    vertical-align: middle;
+    background: #4E0D6F;
+    border: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 50px;
+    color: #fff;
+    -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px;
+    text-shadow: none;
+    -moz-box-shadow: none; -webkit-box-shadow: none; box-shadow: none;
+    -o-transition: all .3s; -moz-transition: all .3s; -webkit-transition: all .3s; -ms-transition: all .3s; transition: all .3s;
+}
+
+button.sign-btn:hover { opacity: 0.85; color: #fff; }
+
+button.sign-btn:active { outline: 0; opacity: 0.85; color: #fff; -moz-box-shadow: none; -webkit-box-shadow: none; box-shadow: none; }
+
+button.sign-btn:focus { outline: 0; opacity: 0.85; background: #4E0D6F; color: #fff; }
+
+button.sign-btn:active:focus, button.sign-btn.active:focus { outline: 0; opacity: 0.85; background: #4E0D6F; color: #fff; }
+
+@media (max-width: 767px) {
+	.middle-border {
+		min-height: auto;
+		margin: 65px 30px 0 30px;
+		border-right: 0;
+		border-top: 1px solid #ddd;
+	}
+}
+
+.push-to-bottom {
+	height: 173px;
+}
+
+.movie-poster {
+	margin-bottom: 10px;
+}
+
+.movie-header {
+	margin-top: 0;
+	margin-bottom: 18px;
+}
+
+.movie-title {
+	margin-bottom: 2px;
+}
+
+.review-stars {
+	padding-top: 6px;
+	width: 115px;
+}
+
+.panel-body {
+	padding-top: 0;
+}
+
+.fa-star, .fa-star-half-o, .fa-star-o {
+	color: #FFBE00;
+}
+
+.buy-form {
+	margin-right: -85px;
+	margin-left: 0;
+}
+
+.quantity-counter {
+	min-width: 60px;
+}
+
+.add-button {
+	width: 100%;
+	min-width: 199px;
+}
+
+.price {
+	margin: 0;
+	padding: 0;
+	margin-right: 100px;
+}
+
+.glyphicon.glyphicon-info-sign {
+	font-size: 60px;
+}
+
+.info-sign {
+	margin-top: 10px;
+}
