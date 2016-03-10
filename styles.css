@@ -195,7 +195,7 @@ button.sign-btn:active:focus, button.sign-btn.active:focus { outline: 0; opacity
 	margin-bottom: 10px;
 }
 
-.movie-header {
+.page-header {
 	margin-top: 0;
 	margin-bottom: 18px;
 }
@@ -243,4 +243,16 @@ button.sign-btn:active:focus, button.sign-btn.active:focus { outline: 0; opacity
 
 .info-sign {
 	margin-top: 10px;
+}
+
+.details-container {
+	margin-top: 20px;
+}
+
+.review-container {
+	margin-bottom: 14px;
+}
+
+.glyphicon.glyphicon-triangle-right {
+	font-size: 9px;
 }
