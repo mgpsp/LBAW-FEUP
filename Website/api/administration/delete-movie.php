@@ -1,14 +1,23 @@
 <?php
   include_once('../../config/init.php');
+  include_once('../add-to-log.php');
   include_once($BASE_DIR .'database/movies.php');
 
-  if(!isset($_SESSION['admin']))
-  	header("Location: $BASE_URL");
+  if(!isset($_SESSION['admin'])) {
+    $_SESSION['error_messages'] = "Login to delete movie.";
+    header("Location: $BASE_URL");
+    exit;
+  }
 
   try {
-  	$returnCode = deleteMovie($_GET['id']);
+  	deleteMovie($_GET['id']);
   } catch (PDOException $e) {
-  	$returnCode = $e->getMessage();
+    sendToLog("delete_movie", $e->getMessage());
+    $_SESSION['error_messages'] = "Couldn't delete movie.";
+    header("Location: $BASE_URL");
+    exit;
   }
-  echo json_encode($returnCode);
+
+  $_SESSION['success_messages'] = "Movie deleted.";
+  header("Location: $BASE_URL");
 ?>

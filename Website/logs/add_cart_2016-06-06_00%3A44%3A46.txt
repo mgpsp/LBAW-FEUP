@@ -1,0 +1,4 @@
+add_cart
+2016-06-06 00:44:46
+SQLSTATE[23505]: Unique violation: 7 ERROR:  duplicate key value violates unique constraint "moviecart_pkey"
+DETAIL:  Key (cartid, movieid)=(10, 28) already exists.

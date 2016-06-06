@@ -1,10 +1,16 @@
 {include file='common/header.tpl'}
 
 <div class="container">
-	{if isset($SUCESS_MESSAGES)}
+	{if isset($SUCCESS_MESSAGES)}
     <div class="alert alert-success fade in">
         <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-        <strong>Success!</strong> {$SUCESS_MESSAGES}
+        <strong>Success!</strong> {$SUCCESS_MESSAGES}
+    </div>
+    {/if}
+    {if isset($ERROR_MESSAGES)}
+    <div class="alert alert-danger fade in">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <strong>Error!</strong> {$ERROR_MESSAGES}
     </div>
     {/if}
 	<div id="movie-carousel" class="carousel slide" data-ride="carousel">
@@ -12,20 +18,20 @@
 				{foreach $carouselmovies as $cmovie}
 				{if $cmovie@index eq 0}
 				<div class="item active">
-					<a href="{$BASE_URL}pages/product/product.php?id={$cmovie.movieid}">
-						<img src="{$BASE_URL}{$cmovie.imagepath}" alt="{$cmovie.name}" class="carousel-img">
+					<a href="{$BASE_URL}pages/product/?id={$cmovie.movieid}">
+						<img alt="{$cmovie.name} still" src="{$BASE_URL}{$cmovie.imagepath}" class="carousel-img">
 					</a>
 					<div class="carousel-caption">
-					    <a class="carousel-movie-name" href="{$BASE_URL}pages/product/product.php?id={$cmovie.movieid}"><h3>{$cmovie.name}</h3></a>
+					    <a class="carousel-movie-name" href="{$BASE_URL}pages/product/?id={$cmovie.movieid}"><h3>{$cmovie.name}</h3></a>
 					</div>
 				</div>
 				{else}
 				<div class="item">
-					<a href="{$BASE_URL}pages/product/product.php?id={$cmovie.movieid}">
-						<img src="{$BASE_URL}{$cmovie.imagepath}" alt="{$cmovie.name}" class="carousel-img">
+					<a href="{$BASE_URL}pages/product/?id={$cmovie.movieid}">
+						<img alt="{$cmovie.name} still" src="{$BASE_URL}{$cmovie.imagepath}" class="carousel-img">
 					</a>
 					<div class="carousel-caption">
-					    <a class="carousel-movie-name" href="{$BASE_URL}pages/product/product.php?id={$cmovie.movieid}"><h3>{$cmovie.name}</h3></a>
+					    <a class="carousel-movie-name" href="{$BASE_URL}pages/product/?id={$cmovie.movieid}"><h3>{$cmovie.name}</h3></a>
 					</div>
 				</div>
 				{/if}
@@ -40,31 +46,27 @@
 			  <span class="glyphicon glyphicon-chevron-right"></span>
 			</a>
 	</div>
-</div>
 
-<div class="container">
 	<h1>Featured movies</h1>
 	<hr class="home-page-separator">
-	<div class="row">
+	<div class="row" style="margin-bottom: 20px">
+		{foreach $featuredMovies as $movie}
 		<div class="col-lg-3 col-sm-6 text-center">
-			<img src="{$BASE_URL}images/deadpool.jpg" class="poster-thumbnail"></img>
-			<h3>Deadpool</h3>
+			<a href="{$BASE_URL}pages/product/?id={$movie.movieid}"><img alt="{$movie.name} cover" src="{$BASE_URL}{$movie.imagepath}" class="poster-thumbnail" width=206 height=300></a>
+			<a href="{$BASE_URL}pages/product/?id={$movie.movieid}"><h3>{$movie.name}</h3></a>
 		</div>
+		{/foreach}
+	</div>
 
+	<h1>New releases</h1>
+	<hr class="home-page-separator">
+	<div class="row" style="margin-bottom: 30px">
+		{foreach $newReleases as $movie}
 		<div class="col-lg-3 col-sm-6 text-center">
-			<img src="{$BASE_URL}images/witch.png" class="poster-thumbnail"></img>
-			<h3>The VVitch</h3>
+			<a href="{$BASE_URL}pages/product/?id={$movie.movieid}"><img alt="{$movie.name} cover" src="{$BASE_URL}{$movie.imagepath}" class="poster-thumbnail" width=206 height=300></a>
+			<a href="{$BASE_URL}pages/product/?id={$movie.movieid}"><h3>{$movie.name}</h3></a>
 		</div>
-
-		<div class="col-lg-3 col-sm-6 text-center">
-			<img src="{$BASE_URL}images/triple9.png" class="poster-thumbnail"></img>
-			<h3>Triple 9</h3>
-		</div>
-
-		<div class="col-lg-3 col-sm-6 text-center">
-			<img src="{$BASE_URL}images/madmax.jpg" class="poster-thumbnail"></img>
-			<h3>Mad Max: Fury Road</h3>
-		</div>
+		{/foreach}
 	</div>
 </div>
 

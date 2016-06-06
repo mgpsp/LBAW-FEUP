@@ -11,8 +11,9 @@
 
 	function addCity($name) {
 		global $conn;
-		$stmt = $conn->prepare("INSERT INTO city(name) VALUES (?) RETURNING id");
-	    return $stmt->execute(array($name));
+		$stmt = $conn->prepare("INSERT INTO city(name) VALUES (?) RETURNING cityid");
+	    $stmt->execute(array($name));
+	    return $stmt->fetch();
 	}
 
 ?>

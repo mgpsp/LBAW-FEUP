@@ -1,12 +1,20 @@
 {include file='common/header.tpl'}
 
-<script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
-<script src="{$BASE_URL}lib/bootstrap/js/bootstrap.js"></script>
-
 <div class="container">
-	<div class="page-header" style="margin-bottom: 25px;"><h2 class="shopping-cart-header">Shop</h2></div>
+	<div class="page-header" style="margin-bottom: 25px;">
+		<h2 class="shopping-cart-header" style="display: inline">Shop</h2>
+		<div class="pull-right">
+			<select class="form-control" id="sort">
+				<option value="none" selected style="display:none;">Sort by</option>
+				<option value="price-lh">Price: Low to High</option>
+				<option value="price-hl">Price: High to Low</option>
+				<option value="avg">Avg. Costumer Review</option>
+				<option value="date">Release Date</option>
+			</select>
+		</div>
+	</div>
 	<div class="row">
-		<div class="col-md-3 col-sm-3 col-xs-7 col-lg-2">
+		<div class="col-md-3 col-sm-3 col-xs-7 col-lg-2 hidden-xs">
 			<ul class="list-group">
 				<li class="list-group-item"><b>Genre</b>
 					{foreach $genres as $genre}

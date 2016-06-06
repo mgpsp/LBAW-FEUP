@@ -1,0 +1,32 @@
+input[type="text"] {
+	margin-top: -7px;
+	margin-bottom: 0;
+}
+
+.modal-body .form-group {
+	margin-bottom: 0;
+}
+
+textarea, 
+textarea.form-control {
+	padding: 0;
+	padding-left: 20px;
+	line-height: 19px;
+	min-height: 120px;
+}
+
+.margintop {
+	margin-top: 10px;
+}
+
+.info {
+	margin-top: 20px;
+	margin-bottom: 9px;
+	font-size: 17px;
+}
+
+.cover-upload {
+	display: block;
+	margin-left: 20px;
+	max-width: 65%;
+}

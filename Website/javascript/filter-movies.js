@@ -82,7 +82,62 @@ function filterMovies() {
 	else
 		limit = moviesToShow.length;
 
-	n_pages = Math.ceil(moviesToShow.length/14);
+	n_pages = Math.ceil(moviesToShow.length/15);
+}
+
+function sortMovies(order) {
+	if (order == 'none')
+		return;
+
+	switch(order) {
+		case 'price-lh':
+			moviesToShow.sort(sortByPriceLH);
+			break;
+		case 'price-hl':
+			moviesToShow.sort(sortByPriceHL);
+			break;
+		case 'avg':
+			moviesToShow.sort(sortByAvg);
+			break;
+		case 'date':
+			moviesToShow.sort(sortByDate);
+			break;
+	}
+
+	changePage(1);
+}
+
+function sortByPriceLH(a, b) {
+	return a['price'] - b['price'];
+}
+
+function sortByPriceHL(a, b) {
+	return b['price'] - a['price'];
+}
+
+function sortByAvg(a, b) {
+	if (b['averagescore'] != null && a['averagescore'] != null)
+		return b['averagescore'] - a['averagescore'];
+	else if (b['averagescore'] != null && a['averagescore'] == null)
+		return 1;
+	else if (b['averagescore'] == null && a['averagescore'] != null)
+		return -1;
+	else
+		return 0;
+}
+
+function sortByDate(a, b) {
+	var dateA = a['releasedate'].split('-');
+	var dateB = b['releasedate'].split('-');
+
+	if (dateA[0] == dateB[0]) {
+		if (dateA[1] == dateB[1])
+			return dateB[2] - dateA[2];
+		else
+			return dateB[1] - dateA[1];
+	}
+	else
+		return dateB[0] - dateA[0];
 }
 
 $(document).ready(function() {
@@ -169,6 +224,11 @@ $(document).ready(function() {
 		}
 		filterMovies();
 		changePage(1);
+	});
+
+	$('#sort').on('change', function() {
+		var order = $(this).val();
+		sortMovies(order);
 	});
 });
 

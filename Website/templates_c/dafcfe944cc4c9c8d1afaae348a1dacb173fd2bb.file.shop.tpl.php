@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2016-05-29 01:33:49
+<?php /* Smarty version Smarty-3.1.15, created on 2016-06-06 05:25:43
          compiled from "/opt/lbaw/lbaw1531/public_html/final/templates/shop/shop.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:7775122625747502935b868-99626301%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'dafcfe944cc4c9c8d1afaae348a1dacb173fd2bb' => 
     array (
       0 => '/opt/lbaw/lbaw1531/public_html/final/templates/shop/shop.tpl',
-      1 => 1464478426,
+      1 => 1465183541,
       2 => 'file',
     ),
   ),
@@ -19,25 +19,32 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'unifunc' => 'content_57475029377548_76587335',
   'variables' => 
   array (
-    'BASE_URL' => 0,
     'genres' => 0,
     'genre' => 0,
     'formats' => 0,
     'format' => 0,
+    'BASE_URL' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_57475029377548_76587335')) {function content_57475029377548_76587335($_smarty_tpl) {?><?php echo $_smarty_tpl->getSubTemplate ('common/header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>
 
 
-<script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
-<script src="<?php echo $_smarty_tpl->tpl_vars['BASE_URL']->value;?>
-lib/bootstrap/js/bootstrap.js"></script>
-
 <div class="container">
-	<div class="page-header" style="margin-bottom: 25px;"><h2 class="shopping-cart-header">Shop</h2></div>
+	<div class="page-header" style="margin-bottom: 25px;">
+		<h2 class="shopping-cart-header" style="display: inline">Shop</h2>
+		<div class="pull-right">
+			<select class="form-control" id="sort">
+				<option value="none" selected style="display:none;">Sort by</option>
+				<option value="price-lh">Price: Low to High</option>
+				<option value="price-hl">Price: High to Low</option>
+				<option value="avg">Avg. Costumer Review</option>
+				<option value="date">Release Date</option>
+			</select>
+		</div>
+	</div>
 	<div class="row">
-		<div class="col-md-3 col-sm-3 col-xs-7 col-lg-2">
+		<div class="col-md-3 col-sm-3 col-xs-7 col-lg-2 hidden-xs">
 			<ul class="list-group">
 				<li class="list-group-item"><b>Genre</b>
 					<?php  $_smarty_tpl->tpl_vars['genre'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['genre']->_loop = false;

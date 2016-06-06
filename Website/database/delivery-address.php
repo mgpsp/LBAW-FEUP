@@ -18,4 +18,11 @@
                                 WHERE deliveryadressid = ?");
         $stmt->execute(array($fullname, $address, $cityid, $postcode, $countryid, $id));
     }
+
+    function addDeliveryAddress($fullname, $address, $cityid, $postcode, $countryid) {
+        global $conn;
+        $stmt = $conn->prepare("INSERT INTO deliveryadress(fullname, address, cityid, postcode, countryid) VALUES(?, ?, ?, ?, ?) RETURNING deliveryadressid");
+        $stmt->execute(array($fullname, $address, $cityid, $postcode, $countryid));
+        return $stmt->fetch();
+    }
 ?>

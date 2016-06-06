@@ -1,0 +1,4 @@
+add_review
+2016-06-06 00:41:15
+SQLSTATE[23502]: Not null violation: 7 ERROR:  null value in column "memberid" violates not-null constraint
+DETAIL:  Failing row contains (28, Lindo filme!, Pensei que era um filme completamente diferente, adorei de inici..., 5, 2, null, 2016-06-05 23:41:15.43127).

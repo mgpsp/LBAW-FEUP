@@ -1,0 +1,4 @@
+add_cart
+2016-06-06 00:40:04
+SQLSTATE[23502]: Not null violation: 7 ERROR:  null value in column "cartid" violates not-null constraint
+DETAIL:  Failing row contains (null, 2, 1).

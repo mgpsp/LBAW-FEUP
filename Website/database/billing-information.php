@@ -17,4 +17,11 @@
                                 WHERE billinginformationid = ?");
         $stmt->execute(array($fullname, $address, $cityid, $postcode, $countryid, $id));
     }
+
+    function addBillingAddress($fullname, $address, $cityid, $postcode, $countryid) {
+        global $conn;
+        $stmt = $conn->prepare("INSERT INTO billinginformation(fullname, address, cityid, postcode, countryid) VALUES(?, ?, ?, ?, ?) RETURNING billinginformationid");
+        $stmt->execute(array($fullname, $address, $cityid, $postcode, $countryid));
+        return $stmt->fetch();
+    }
 ?>

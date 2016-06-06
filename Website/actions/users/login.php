@@ -1,5 +1,6 @@
 <?php
   include_once('../../config/init.php');
+  include_once('../add-to-log.php');
   include_once($BASE_DIR .'database/users.php');  
 
   if (!$_POST['email'] || !$_POST['password']) {
@@ -13,7 +14,12 @@
   $password = $_POST['password'];
 
   if (isLoginCorrect($email, $password)) {
-    if ($email === 'admin')
+    if (isUserBanned($email)) {
+      $_SESSION['error_messages'] = 'Incorrect e-mail address or password.';
+      header('Location: ' . $_SERVER['HTTP_REFERER']);
+      exit;
+    }
+    else if ($email === 'admin')
       $_SESSION['admin'] = 'admin';
     else
       $_SESSION['email'] = $email;
@@ -23,7 +29,7 @@
   }
 
   if (isset($_SESSION['admin']))
-    header("Location: " . $BASE_URL . "pages/administration/admin.php");
+    header("Location: " . $BASE_URL . "pages/administration/");
   else if (isset($_SESSION['email']))
     header("Location: $BASE_URL");
   else

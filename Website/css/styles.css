@@ -4,7 +4,27 @@
 
 body {
 	margin: 0px;
+	background-color: #F8F8F8;
 }
+
+.hiddenRow {
+    padding: 0 !important;
+}
+
+.navbar {
+	background-color: #ebebeb;
+}
+
+.navbar-default .navbar-nav > .active{
+    color: #000;
+   background: #F8F8F8;
+ }
+ .navbar-default .navbar-nav > .active > a, 
+ .navbar-default .navbar-nav > .active > a:hover, 
+ .navbar-default .navbar-nav > .active > a:focus {
+      color: #000;
+      background: #F8F8F8;
+ }
 
 .home-page-separator {
 	margin: 0px;
@@ -115,8 +135,8 @@ textarea.form-control {
     padding: 0 20px;
     vertical-align: middle;
     background: #fff;
-    border: 3px solid #fff;
     font-family: 'Roboto', sans-serif;
+    border: 0px;
     font-size: 16px;
     font-weight: 300;
     line-height: 50px;
@@ -139,7 +159,7 @@ textarea:focus,
 textarea.form-control:focus {
 	outline: 0;
 	background: #fff;
-    border: 3px solid #fff;
+	border: 0px;
     -moz-box-shadow: none; -webkit-box-shadow: none; box-shadow: none;
 }
 
@@ -284,6 +304,10 @@ a.shop-search-by {
 	font-size: 10px;
 }
 
+#gly-rem-wish {
+	font-size: 13px;
+}
+
 .push-footer-cart {
 	height: 185px;
 }
@@ -377,8 +401,48 @@ textarea.form-control {
 
 .add-review-stars {
 	margin-top: -8px;
+	width: 40%;
 }
 
 .order-small {
 	margin-bottom: 11px;
+}
+
+#search-results {
+	position: absolute;
+	top: 15px;
+	right: 42px;
+	width: 84%;
+}
+
+.manage-movies {
+	margin-top: 20px;
+	width: 25px;
+	height: 25px;
+	padding: 0;
+	padding-top: 2px;
+	padding-right: 3px;
+}
+
+.remove-movie {
+	font-size: 14px;
+}
+
+.edit-review {
+	font-size: 12px;
+	color: #FF8000;
+}
+
+.remove-review {
+	font-size: 12px;
+	color: #CC0000;
+}
+
+.card-number .tooltip-inner {
+    width: 250px;
+}
+
+#cv-help {
+	text-decoration: none;
+	color: black;
 }

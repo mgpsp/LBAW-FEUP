@@ -4,6 +4,8 @@
 
   error_reporting(E_ERROR | E_WARNING); // E_NOTICE by default
 
+  date_default_timezone_set('UTC+1');
+
   $BASE_DIR = '/opt/lbaw/lbaw1531/public_html/final/'; 
   $BASE_URL = '/~lbaw1531/final/'; 
 
@@ -11,7 +13,7 @@
   $conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
   $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-  $conn->exec('SET SCHEMA \'proto\''); 
+  $conn->exec('SET SCHEMA \'final\''); 
 
   include_once($BASE_DIR . 'lib/smarty/Smarty.class.php');
   
