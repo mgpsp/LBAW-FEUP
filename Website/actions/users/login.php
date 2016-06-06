@@ -15,7 +15,7 @@
 
   if (isLoginCorrect($email, $password)) {
     if (isUserBanned($email)) {
-      $_SESSION['error_messages'] = 'Incorrect e-mail address or password.';
+      $_SESSION['error_messages'] = 'You were banned.';
       header('Location: ' . $_SERVER['HTTP_REFERER']);
       exit;
     }
